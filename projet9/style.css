@@ -1,0 +1,372 @@
+/* --- IMPORTATION DES POLICES (IDENTIQUE À L'ACCUEIL) --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+@font-face {
+  font-family: Mount Hills; /* set name */
+  src: url(../font/Mount\ Hills.otf); /* url of the font */
+}
+
+/* --- PALETTE DE COULEURS (IDENTIQUE À L'ACCUEIL) --- */
+:root {
+  --color-dark-bg: #1a1a1a;       /* Noir foncé pour les fonds */
+  --color-dark-text: #2c2c2c;     /* Noir pour le texte */
+  --color-pink-accent: #E91E63; /* Rose vif et moderne */
+  --color-pink-light: #fce4ec;  /* Rose très clair pour les fonds */
+  --color-light-bg: #f9f9f9;   /* Fond clair pour le body */
+  --color-white: #ffffff;
+  --shadow-main: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- STYLES GLOBAUX (IDENTIQUE À L'ACCUEIL) --- */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+  color: var(--color-dark-text);
+  
+  /* Fond grid subtil (identique à l'accueil) */
+  background-color: var(--color-light-bg);
+  background-image:
+    linear-gradient(#e0e0e0 1px, transparent 1px),
+    linear-gradient(to right, #e0e0e0 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+/* --- STYLES DE LA PAGE PROJET --- */
+
+/* 1. Barre de Navigation */
+nav {
+  background-color: var(--color-dark-bg);
+  padding: 1rem 0;
+  border-bottom: 3px solid var(--color-pink-accent);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--color-pink-accent);
+}
+
+/* 2. Bannière du Projet (style de l'accueil) */
+header {
+  position: relative;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  
+  /* Fond grid rose sur noir (identique à l'accueil) */
+  background-image:
+    linear-gradient(rgba(233, 30, 99, 0.3) 1px, transparent 1px),
+    linear-gradient(to right, rgba(233, 30, 99, 0.3) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+header h1 {
+  font-family: 'Mount Hills', sans-serif; /* Police de l'accueil */
+  font-size: 4.5rem;
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 400;
+}
+header p {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin: 0.5rem 0 0 0;
+}
+
+/* 3. Contenu principal (la "feuille" blanche) */
+section {
+  max-width: 900px;
+  margin: 2.5rem auto; /* Centre la section */
+  padding: 2rem 3rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+}
+
+/* 4. Titres de la section */
+section h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-pink-accent); /* Titres en rose */
+  border-bottom: 2px solid var(--color-pink-light);
+  padding-bottom: 10px;
+}
+section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-dark-text);
+  margin-top: 2rem;
+  text-align: left;
+}
+
+/* 5. Éléments de contenu */
+section p, section li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+section li {
+  margin-bottom: 0.5rem;
+}
+section img {
+  max-width: 100%; /* Surcharge le style inline */
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 6. Bouton (style de l'accueil) */
+.button {
+  background-color: var(--color-pink-accent);
+  border: none;
+  color: var(--color-white); 
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 700;
+  border: 2px solid var(--color-pink-accent);
+  margin-top: 1rem; /* Ajoute de l'espace */
+}
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-pink-accent);
+  transform: translateY(-2px);
+  border: 2px solid var(--color-pink-accent);
+}
+
+/* --- STYLES SPÉCIFIQUES ALBUM PHOTO --- */
+
+/* Ajustement du conteneur principal pour qu'il soit plus large pour les photos */
+.album-container {
+  max-width: 1200px; /* Plus large que la page texte (900px) */
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+}
+
+.album-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+/* La Grille */
+.gallery-grid {
+  display: grid;
+  /* Crée des colonnes automatiques de min 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 40px; /* Espace pour que les polaroids ne se chevauchent pas trop */
+  padding: 20px;
+  justify-items: center;
+}
+
+/* La Carte Photo (Style Polaroid) */
+.photo-card {
+  background: white;
+  padding: 12px 12px 40px 12px; /* Plus d'espace en bas pour la légende */
+  width: 100%;
+  max-width: 300px; /* Taille max d'un polaroid */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: rotate(0deg);
+  transition: transform 0.3s, z-index 0s;
+  position: relative;
+  
+  /* Texture papier */
+  background-image: linear-gradient(180deg, #fff 0%, #f8f8f8 100%);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 250px; /* Hauteur fixe pour uniformiser */
+  object-fit: cover;
+  border: 1px solid #eee;
+  margin: 0; /* Reset de la marge par défaut des images du css global */
+  display: block;
+}
+
+.photo-card p {
+  font-family: 'Montserrat', sans-serif; /* Police façon écriture */
+  font-size: 0.9rem; /* Un peu plus petit */
+  color: #555;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* LE SCOTCH (TAPE) */
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 80px;
+  height: 30px;
+  background-color: rgba(233, 30, 99, 0.5); /* Rose semi-transparent */
+  transform: translateX(-50%) rotate(-2deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 10;
+  border-radius: 2px;
+  backdrop-filter: blur(1px); /* Effet réaliste */
+}
+
+/* EFFETS DE ROTATION ALÉATOIRE (Nth-child) */
+/* Cela évite d'avoir à mettre du style="" dans le HTML */
+.photo-card:nth-child(odd) {
+  transform: rotate(2deg);
+}
+.photo-card:nth-child(even) {
+  transform: rotate(-2deg);
+}
+.photo-card:nth-child(3n) {
+  transform: rotate(1.5deg);
+}
+.photo-card:nth-child(3n) .tape {
+  transform: translateX(-50%) rotate(3deg); /* Change aussi l'angle du scotch */
+}
+
+/* EFFET AU SURVOL */
+.photo-card:hover {
+  transform: scale(1.05) rotate(0deg); /* Redresse la photo */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  z-index: 5; /* Passe au dessus des autres */
+  cursor: pointer;
+}
+
+/* --- LIGHTBOX (ZOOM PHOTO) --- */
+
+.lightbox {
+  display: none; /* Caché par défaut */
+  position: fixed; /* Reste fixe même si on scrolle */
+  z-index: 1000; /* Au-dessus de TOUT */
+  padding-top: 50px; /* Espace au dessus */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permet de scroller si l'image est géante */
+  background-color: rgba(0, 0, 0, 0.9); /* Fond noir presque opaque */
+  backdrop-filter: blur(5px); /* Floute l'arrière plan */
+}
+
+/* L'image en grand */
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 90%; /* Ne dépasse pas 90% de la largeur de l'écran */
+  max-height: 80vh; /* Ne dépasse pas 80% de la hauteur de l'écran */
+  border: 2px solid var(--color-white); /* Cadre photo blanc */
+  animation: zoomIn 0.3s; /* Petite animation d'ouverture */
+}
+
+/* Légende sous la photo */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Bouton fermer (X) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--color-pink-accent); /* Croix rose */
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Animation d'ouverture */
+@keyframes zoomIn {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* Responsive pour mobile */
+@media only screen and (max-width: 700px){
+  .lightbox-content {
+    width: 95%;
+  }
+}
+
+/* 7. Footer (style de l'accueil) */
+footer {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1rem;
+  color: var(--color-light-bg);
+  background-color: var(--color-dark-bg);
+  margin-top: 3rem;
+  border-top: 5px solid var(--color-pink-accent);
+}
+footer a {
+  color: var(--color-pink-accent); /* Lien de retour en rose */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+

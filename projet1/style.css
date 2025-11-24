@@ -1,0 +1,199 @@
+/* --- IMPORTATION DES POLICES (IDENTIQUE À L'ACCUEIL) --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+
+
+@font-face {
+  font-family: Mount Hills; /* set name */
+  src: url(../font/Mount\ Hills.otf); /* url of the font */
+}
+
+/* --- PALETTE DE COULEURS (IDENTIQUE À L'ACCUEIL) --- */
+:root {
+  --color-dark-bg: #1a1a1a;       /* Noir foncé pour les fonds */
+  --color-dark-text: #2c2c2c;     /* Noir pour le texte */
+  --color-pink-accent: #E91E63; /* Rose vif et moderne */
+  --color-pink-light: #fce4ec;  /* Rose très clair pour les fonds */
+  --color-light-bg: #f9f9f9;   /* Fond clair pour le body */
+  --color-white: #ffffff;
+  --shadow-main: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- STYLES GLOBAUX (IDENTIQUE À L'ACCUEIL) --- */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+  color: var(--color-dark-text);
+  
+  /* Fond grid subtil (identique à l'accueil) */
+  background-color: var(--color-light-bg);
+  background-image:
+    linear-gradient(#e0e0e0 1px, transparent 1px),
+    linear-gradient(to right, #e0e0e0 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+/* --- STYLES DE LA PAGE PROJET --- */
+
+/* 1. Barre de Navigation */
+nav {
+  background-color: var(--color-dark-bg);
+  padding: 1rem 0;
+  border-bottom: 3px solid var(--color-pink-accent);
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--color-pink-accent);
+}
+
+/* 2. Bannière du Projet (style de l'accueil) */
+header {
+  position: relative;
+  background-color: var(--color-dark-bg);
+  color: var(--color-white);
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  
+  /* Fond grid rose sur noir (identique à l'accueil) */
+  background-image:
+    linear-gradient(rgba(233, 30, 99, 0.3) 1px, transparent 1px),
+    linear-gradient(to right, rgba(233, 30, 99, 0.3) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+header h1 {
+  font-family: 'Mount Hills', sans-serif; /* Police de l'accueil */
+  font-size: 4.5rem;
+  color: var(--color-white);
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 400;
+}
+header p {
+  font-size: 1.3rem;
+  color: #f0f0f0;
+  margin: 0.5rem 0 0 0;
+}
+
+/* 3. Contenu principal (la "feuille" blanche) */
+section {
+  max-width: 900px;
+  margin: 2.5rem auto; /* Centre la section */
+  padding: 2rem 3rem;
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+}
+
+/* 4. Titres de la section */
+section h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-pink-accent); /* Titres en rose */
+  border-bottom: 2px solid var(--color-pink-light);
+  padding-bottom: 10px;
+}
+section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-dark-text);
+  margin-top: 2rem;
+  text-align: left;
+}
+
+/* 5. Éléments de contenu */
+section p, section li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+section li {
+  margin-bottom: 0.5rem;
+}
+section img {
+  max-width: 100%; /* Surcharge le style inline */
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 6. Bouton (style de l'accueil) */
+.button {
+  background-color: var(--color-pink-accent);
+  border: none;
+  color: var(--color-white); 
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 25px; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-weight: 700;
+  border: 2px solid var(--color-pink-accent);
+  margin-top: 1rem; /* Ajoute de l'espace */
+}
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-pink-accent);
+  transform: translateY(-2px);
+  border: 2px solid var(--color-pink-accent);
+}
+
+/* 7. Footer (style de l'accueil) */
+footer {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1rem;
+  color: var(--color-light-bg);
+  background-color: var(--color-dark-bg);
+  margin-top: 3rem;
+  border-top: 5px solid var(--color-pink-accent);
+}
+footer a {
+  color: var(--color-pink-accent); /* Lien de retour en rose */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+footer a:hover {
+  text-decoration: underline;
+}
