@@ -1,25 +1,22 @@
-/* --- IMPORTATION DES POLICES (IDENTIQUE À L'ACCUEIL) --- */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
 
 
 @font-face {
-  font-family: Mount Hills; /* set name */
-  src: url(../font/Mount\ Hills.otf); /* url of the font */
+  font-family: Mount Hills;
+  src: url(../font/Mount\ Hills.otf);
 }
 
-/* --- PALETTE DE COULEURS (IDENTIQUE À L'ACCUEIL) --- */
 :root {
-  --color-dark-bg: #1a1a1a;       /* Noir foncé pour les fonds */
-  --color-dark-text: #2c2c2c;     /* Noir pour le texte */
-  --color-pink-accent: #E91E63; /* Rose vif et moderne */
-  --color-pink-light: #fce4ec;  /* Rose très clair pour les fonds */
-  --color-light-bg: #f9f9f9;   /* Fond clair pour le body */
+  --color-dark-bg: #1a1a1a;
+  --color-dark-text: #2c2c2c;
+  --color-pink-accent: #E91E63;
+  --color-pink-light: #fce4ec;
+  --color-light-bg: #f9f9f9;
   --color-white: #ffffff;
   --shadow-main: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* --- STYLES GLOBAUX (IDENTIQUE À L'ACCUEIL) --- */
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -37,7 +34,6 @@ body {
   padding: 0;
   color: var(--color-dark-text);
   
-  /* Fond grid subtil (identique à l'accueil) */
   background-color: var(--color-light-bg);
   background-image:
     linear-gradient(#e0e0e0 1px, transparent 1px),
@@ -45,9 +41,7 @@ body {
   background-size: 25px 25px;
 }
 
-/* --- STYLES DE LA PAGE PROJET --- */
 
-/* 1. Barre de Navigation */
 nav {
   background-color: var(--color-dark-bg);
   padding: 1rem 0;
@@ -73,7 +67,6 @@ nav a:hover {
   color: var(--color-pink-accent);
 }
 
-/* 2. Bannière du Projet (style de l'accueil) */
 header {
   position: relative;
   background-color: var(--color-dark-bg);
@@ -82,14 +75,13 @@ header {
   text-align: center;
   overflow: hidden;
   
-  /* Fond grid rose sur noir (identique à l'accueil) */
   background-image:
     linear-gradient(rgba(233, 30, 99, 0.3) 1px, transparent 1px),
     linear-gradient(to right, rgba(233, 30, 99, 0.3) 1px, transparent 1px);
   background-size: 25px 25px;
 }
 header h1 {
-  font-family: 'Mount Hills', sans-serif; /* Police de l'accueil */
+  font-family: 'Mount Hills', sans-serif;
   font-size: 4.5rem;
   color: var(--color-white);
   letter-spacing: 2px;
@@ -102,17 +94,15 @@ header p {
   margin: 0.5rem 0 0 0;
 }
 
-/* 3. Contenu principal (la "feuille" blanche) */
 section {
   max-width: 900px;
-  margin: 2.5rem auto; /* Centre la section */
+  margin: 2.5rem auto;
   padding: 2rem 3rem;
   background-color: var(--color-white);
   border-radius: 8px;
   box-shadow: var(--shadow-main);
 }
 
-/* 4. Titres de la section */
 section h2 {
   font-size: 2rem;
   margin-top: 2.5rem;
@@ -120,7 +110,7 @@ section h2 {
   text-align: left;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--color-pink-accent); /* Titres en rose */
+  color: var(--color-pink-accent);
   border-bottom: 2px solid var(--color-pink-light);
   padding-bottom: 10px;
 }
@@ -133,7 +123,6 @@ section h3 {
   text-align: left;
 }
 
-/* 5. Éléments de contenu */
 section p, section li {
   font-size: 1.1rem;
   line-height: 1.7;
@@ -146,7 +135,7 @@ section li {
   margin-bottom: 0.5rem;
 }
 section img {
-  max-width: 100%; /* Surcharge le style inline */
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 2rem auto;
@@ -154,7 +143,6 @@ section img {
   border-radius: 4px;
 }
 
-/* 6. Bouton (style de l'accueil) */
 .button {
   background-color: var(--color-pink-accent);
   border: none;
@@ -169,7 +157,7 @@ section img {
   transition: background-color 0.3s, transform 0.3s;
   font-weight: 700;
   border: 2px solid var(--color-pink-accent);
-  margin-top: 1rem; /* Ajoute de l'espace */
+  margin-top: 1rem;
 }
 .button:hover {
   background-color: var(--color-white);
@@ -178,7 +166,6 @@ section img {
   border: 2px solid var(--color-pink-accent);
 }
 
-/* 7. Footer (style de l'accueil) */
 footer {
   text-align: center;
   padding: 3rem;
@@ -189,7 +176,7 @@ footer {
   border-top: 5px solid var(--color-pink-accent);
 }
 footer a {
-  color: var(--color-pink-accent); /* Lien de retour en rose */
+  color: var(--color-pink-accent);
   text-decoration: none;
   font-weight: 700;
   font-size: 1.1rem;
