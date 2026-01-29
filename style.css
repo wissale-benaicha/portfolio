@@ -1,55 +1,53 @@
-/* --- IMPORTATION DES POLICES --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap'); /* Gardé au cas où pour des éléments legacy */
 
-@font-face {
-  font-family: Mount Hills; /* set name */
-  src: url(font/Mount\ Hills.otf); /* url of the font */
-}
 
-/* --- NOUVELLE PALETTE DE COULEURS --- */
 :root {
-  --color-dark-bg: #1a1a1a;       /* Noir foncé pour les fonds */
-  --color-dark-text: #2c2c2c;     /* Noir pour le texte */
-  --color-pink-accent: #E91E63; /* Rose vif et moderne */
-  --color-pink-light: #fce4ec;  /* Rose très clair pour les fonds */
-  --color-light-bg: #f9f9f9;   /* Fond clair pour le body */
-  --color-white: #ffffff;
-  --shadow-main: 0 10px 20px rgba(0,0,0,0.1);
-  --shadow-dark: 0 10px 20px rgba(0,0,0,0.3);
+  --bg-dark-main: #1A1D23;    
+  --bg-dark-secondary: #252830; 
+  --text-light: #F4F1EA;      
+  --text-on-card: #2D3142;    
+  --card-bg: #EAE6DE;         
+  --accent-muted: #9A8C98;    
+  --accent-pop: #C7B198;
+  --grid-line-color: rgba(244, 241, 234, 0.06);
+  --shadow-offset-dark: 12px 12px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* --- STYLES GLOBAUX --- */
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+    width: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body {
-  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   text-align: justify;
-  margin: 0;
+margin: 0;
   padding: 0;
-  color: var(--color-dark-text);
-  
-  /* NOUVEAU : Fond grid subtil */
-  background-color: var(--color-light-bg);
-  background-image:
-    linear-gradient(#e0e0e0 1px, transparent 1px),
-    linear-gradient(to right, #e0e0e0 1px, transparent 1px);
-  background-size: 25px 25px;
+  line-height: 1.6;
+  background-color: var(--bg-dark-secondary);
+  color: var(--text-light);
+background-image: 
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  overflow-x: hidden;
+    width: 100%;
 }
 
+
 h1, h2, h3 {
-  font-family: 'Montserrat', Verdana, sans-serif;
-  text-align: center;
-  font-weight: 700;
-  color: var(--color-dark-text);
+  font-family: 'Syne', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: var(--text-light);
 }
 
 h2 {
@@ -58,67 +56,70 @@ h2 {
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--color-pink-accent); /* Titres de section en rose */
 }
 
-/* Les sections normales sont centrées grâce à Bootstrap (.container) */
-/* (Plus besoin de 'max-width: 1200px' sur 'section' ici) */
 
-/* 1. Barre de Navigation */
 nav {
-  background-color: var(--color-dark-bg);
-  padding: 1rem 0;
-  border-bottom: 3px solid var(--color-pink-accent);
+  background: rgba(26, 29, 35, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
 }
 nav a {
-  color: var(--color-white);
-  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  font-family: 'Syne', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s, opacity 0.3s;
   letter-spacing: 1px;
-  transition: color 0.3s;
 }
+
 nav a:hover {
-  color: var(--color-pink-accent);
+  color: var(--accent-pop);
+  opacity: 0.8;
 }
 
 
-/* --- BOUTONS --- */
 .button {
-  background-color: var(--color-pink-accent); /* Boutons en rose */
-  border: none;
-  color: var(--color-white); 
+background-color: var(--accent-muted);
+  color: var(--bg-dark-main);
+  border:none;
+
   padding: 12px 28px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  border-radius: 25px; 
+  border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
   font-weight: 700;
   border: 2px solid var(--color-pink-accent);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5); /* Petite ombre portée sur le bouton aussi */
+
 }
 .button:hover {
-  background-color: var(--color-white); /* Fond blanc au survol */
-  color: var(--color-pink-accent); /* Texte rose au survol */
+  background-color: var(--accent-pop);
+  color: var(--bg-dark-main);
   transform: translateY(-2px);
   border: 2px solid var(--color-pink-accent);
 }
 
-/* --- HERO (HEADER) --- */
 .hero {
   position: relative;
-  background-color: var(--color-dark-bg); /* Fond noir foncé */
-  color: var(--color-white);
   min-height: 450px;
   border: none;
   overflow: hidden;
@@ -127,13 +128,12 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   margin: 0;
-  width: 100%; /* Prend toute la largeur */
-  
-  /* NOUVEAU : Fond grid rose sur noir */
-  background-image:
-    linear-gradient(rgba(233, 30, 99, 0.3) 1px, transparent 1px),
-    linear-gradient(to right, rgba(233, 30, 99, 0.3) 1px, transparent 1px);
-  background-size: 25px 25px;
+  width: 100%;
+  background-color: var(--bg-dark-main);
+  background-image: 
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 #header {
@@ -142,29 +142,27 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  /* Fond semi-transparent pour "casser" le grid et faire ressortir le texte 
-  background-color: rgba(26, 26, 26, 0.7); */
   height: auto;
   width: 90%;
   max-width: 1100px;
   margin: auto;
   padding: 2rem;
-  /* border: 1px solid var(--color-pink-accent); /* Bordure rose */
   border-radius: 10px;
 }
 
 #header h1 {
-  font-family: 'Mount Hills', sans-serif; /* <== NOUVELLE POLICE */
-  font-size: 8rem; /* On augmente la taille car elle est plus condensée */
-  margin: 0;
-  color: var(--color-white);
-  letter-spacing: 2px; /* On ajoute un peu d'air */
-  font-weight: 400; /* Pas besoin de 'bold' avec Bebas Neue */
+font-size: clamp(3.5rem, 11vw, 8rem); 
+  line-height: 0.9;
+  margin-bottom: 1rem;
 }
+
 #header p {
   font-size: 1.5rem;
-  color: #f0f0f0; /* Sous-titre gris clair */
+  color: #f0f0f0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   margin: 0;
+  opacity: 0.8;
 }
 
 /* Images de coin */
@@ -173,22 +171,20 @@ nav a:hover {
   width: 110px;
   height: 110px;
 }
-#TL { top: -70px; left: -70px; transform: rotate(-15deg); }
-#TR { top: -70px; right: -70px; transform: rotate(15deg); }
-#BL { bottom: -70px; left: -70px; transform: rotate(15deg); }
-#BR { bottom: -70px; right: -70px; transform: rotate(-15deg); }
+#TL { top: -40px; left: -70px; transform: rotate(-15deg); }
+#TR { top: -40px; right: -70px; transform: rotate(15deg); }
+#BL { bottom: -40px; left: -70px; transform: rotate(15deg); }
+#BR { bottom: -40px; right: -70px; transform: rotate(-15deg); }
 
 
-/* --- NOUVEAU : SECTION PLEINE LARGEUR (POUR LA BANDE) --- */
 .full-width-section {
   max-width: 100%;
   padding: 0;
   border-radius: 0;
   box-shadow: none;
-  background-color: transparent; /* Pas de fond de section */
+  background-color: transparent;
 }
 
-/* BANDE DÉFILANTE */
 .scrolling-divider {
   position: relative;
   overflow: hidden;
@@ -196,10 +192,8 @@ nav a:hover {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  background-color: var(--color-pink-accent); /* Fond rose */
-  color: var(--color-white);
-  border-top: 3px solid var(--color-dark-bg);
-  border-bottom: 3px solid var(--color-dark-bg);
+  background-color: var(--card-bg);; 
+  color: var(--bg-dark-main);
 }
 .scrolling-text {
   display: inline-block;
@@ -217,8 +211,10 @@ nav a:hover {
   100% { transform: translateX(-100%); }
 }
 
+section.container {
+    position: relative;
+}
 
-/* --- SECTION 1 : PROFIL (géré par Bootstrap) --- */
 #section1 {
   background-color: var(--color-white);
   padding: 40px;
@@ -226,38 +222,44 @@ nav a:hover {
   box-shadow: var(--shadow-main);
 }
 
-/* NOUVEAU: Le morceau de scotch */
 .polaroid::before {
-  content: ''; /* Obligatoire pour les pseudo-éléments */
+  content: '';
   position: absolute;
-  top: -10px; /* Positionne au-dessus du polaroid */
-  left: 50%; /* Centre horizontalement */
-  transform: translateX(-50%) rotate(-5deg); /* Centre et donne une légère rotation */
-  width: 60px; /* Largeur du scotch */
-  height: 25px; /* Hauteur du scotch */
-  background-color: rgba(233, 30, 99, 0.6); /* Votre rose avec transparence */
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 60px;
+  height: 25px;
+  background-color: rgba(110, 102, 109, 0.5);
   border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2); /* Légère ombre pour le relief */
-  z-index: 10; /* Pour qu'il soit au-dessus du polaroid */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 .polaroid {
-  background: white;
-  padding: 10px 10px 25px 10px;
-  width: 280px;
+background: var(--card-bg);
+  color: var(--text-on-card);
+  padding: 15px 15px 30px 15px;
+  width: 300px;
+  height: 100%; 
   text-align: center;
-  transition: transform 0.3s;
-  box-shadow: var(--shadow-main);
-  flex-shrink: 0;
-  position: relative; /* TRÈS IMPORTANT: permet de positionner le scotch */
-  overflow: visible; /* Pour que le scotch puisse déborder un peu */
+  border: 1px solid #eee;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; 
+  overflow: visible; 
 
-  /* NOUVEAU: Aspect "papier" */
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure très légère pour délimiter le papier */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1) inset; /* Ombre plus complexe */
   
-  /* NOUVEAU: Texture de papier (gradient très subtil) */
+
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1) inset; 
+  
   background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.05) 100%);
+
+    box-shadow: var(--shadow-offset-dark);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .polaroid img {
   width: 100%;
@@ -265,7 +267,7 @@ nav a:hover {
 }
 .polaroid:hover {
   transform: rotate(-3deg) scale(1.05);
-  box-shadow: var(--shadow-dark);
+  box-shadow: 18px 18px 0px rgba(0, 0, 0, 0.5);
 }
 .polaroid p {
   margin-bottom: 10px;
@@ -278,30 +280,29 @@ nav a:hover {
   font-size: 1.1rem;
 }
 #profil h2 {
-  text-align: left; /* Titre "Bienvenue" aligné à gauche */
+  text-align: left; 
 }
 
 
-/* --- SECTION 2 : COMPÉTENCES --- */
 #section2 {
- background-color: var(--color-dark-bg);
+ background-color: var(--bg-dark-main);
  color: var(--color-light-bg);
- /* ... 'container-fluid' gère la largeur ... */
 }
 
 #competences {
   padding: 20px 0;
   text-align: center;
+position: relative;
+  overflow: visible;
 
- background-image:
-   linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-   linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
- background-size: 25px 25px;
+background-image: 
+    linear-gradient(var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-#competences h2 {
-  color: var(--color-pink-accent); /* Titre en rose sur fond noir */
-}
+#competences h2 { color: var(--accent-pop); }
+
 #competences p {
   max-width: 800px;
   margin: 0 auto 2rem auto;
@@ -317,25 +318,24 @@ nav a:hover {
   max-width: 800px;
   margin: auto;
 }
-.logo {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  transition: transform 0.3s;
-  background-color: #ffffff; /* Fond clair pour les logos */
-  padding: 10px;
-  border-radius: 8px;
-}
-.logo:hover {
-  transform: scale(1.1);
-}
+
 .break {
   flex-basis: 100%;
   height: 0;
 }
 
+.logo {
+    width: 100px;
+  height: 100px;
+    object-fit: contain;
+  background-color: var(--card-bg); 
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-offset-dark);
+  transition: transform 0.3s;
+}
+.logo:hover { transform: translate(-3px, -3px) scale(1.05); }
 
-/* --- SECTION 3 : PROJETS --- */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -344,49 +344,49 @@ nav a:hover {
   justify-items: center;
 }
 
-/* NOUVEAU: Le morceau de scotch */
 .project-card::before {
-  content: '';
+  content: ''; 
   position: absolute;
-  top: -10px; /* Positionne au-dessus */
-  left: 50%;
-  transform: translateX(-50%) rotate(5deg); /* Légère rotation */
-  width: 60px;
-  height: 25px;
-  background-color: rgba(233, 30, 99, 0.6); /* Rose transparent */
+  top: -10px; 
+  left: 50%; 
+  transform: translateX(-50%) rotate(-5deg); 
+  width: 60px; 
+  height: 25px; 
+  background-color: rgba(110, 102, 109, 0.5); 
   border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+  z-index: 10; 
 }
 
-/* Style Polaroid pour les cartes */
 .project-card {
-  background: white;
+background: var(--card-bg);
+  color: var(--text-on-card);
   padding: 15px 15px 30px 15px;
   width: 300px;
-  height: 100%; /* Pour que les cartes aient la même hauteur */
+  height: 100%; 
   text-align: center;
-  box-shadow: var(--shadow-main);
-  transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid #eee;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative; /* TRÈS IMPORTANT: permet de positionner le scotch */
-  overflow: visible; /* Pour que le scotch puisse déborder un peu */
+  position: relative; 
+  overflow: visible;
 
-/* NOUVEAU: Aspect "papier" */
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure très légère pour délimiter le papier */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1) inset; /* Ombre plus complexe */
   
-  /* NOUVEAU: Texture de papier (gradient très subtil) */
+
+  border: 1px solid rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.1) inset; 
+  
   background-image: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.05) 100%);
+
+    box-shadow: var(--shadow-offset-dark);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover {
   transform: scale(1.05);
-  box-shadow: var(--shadow-dark);
+  box-shadow: 18px 18px 0px rgba(0, 0, 0, 0.5);
 }
 
 .project-image {
@@ -417,7 +417,7 @@ nav a:hover {
   font-size: 1.3rem;
   margin-top: 0;
   margin-bottom: 10px;
-  color: var(--color-dark-text); /* Titres de projet en noir */
+  color: var(--color-dark-text); 
 }
 
 .project-info p {
@@ -426,47 +426,102 @@ nav a:hover {
   flex-grow: 1;
 }
 
-/* --- FOOTER --- */
 footer {
-  text-align: center;
+background-color: rgba(0,0,0,0.2);
+  color: var(--text-light);
   padding: 3rem;
-  font-size: 1rem;
-  color: var(--color-light-bg);
-  background-color: var(--color-dark-bg);
-  margin-top: 3rem;
-  border-top: 5px solid var(--color-pink-accent);
+  text-align: center;
+  font-family: 'Syne', sans-serif;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 4rem;
 }
 
 
-/* --- RESPONSIVE DESIGN (Bootstrap s'en charge en partie) --- */
-@media (max-width: 992px) { /* < 'lg' */
-  /* Centre le polaroid sur tablette/mobile */
-  #section1 {
-    text-align: center;
-  }
-  #profil h2 {
-    text-align: center; /* Recentrer le titre "Bienvenue" sur mobile */
-  }
+@media (max-width: 992px) {
+    #header h1 {
+        font-size: 5rem;
+    }
+    
+   
+    #TL { top: -30px; left: -20px; width: 80px; height: 80px; }
+    #TR { top: -30px; right: -20px; width: 80px; height: 80px; }
+    #BL { bottom: -30px; left: -20px; width: 80px; height: 80px; }
+    #BR { bottom: -30px; right: -20px; width: 80px; height: 80px; }
 }
 
 @media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
-  
-  .logo {
-    width: 80px;
-    height: 80px;
-  }
+   
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 
-  #header h1 {
-    font-size: 2.5rem;
-  }
-  #header p {
-    font-size: 1.2rem;
-  }
-  #TL, #TR, #BL, #BR {
-    width: 50px;
-    height: 50px;
+    #header h1 {
+        font-size: 3.5rem;
+    }
+
+    #TL, #TR, #BL, #BR {
+        display: none; 
+    }
+
+    .hero {
+        min-height: 300px;
+    }
+
+    .polaroid, .project-card {
+        width: 100%;
+        max-width: 320px; 
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .scrolling-text {
+        animation: scrollLoop 10s linear infinite; 
+    }
+    .scrolling-text span {
+        font-size: 0.8rem;
+    }
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 20px;
+}
+
+/* --- stickers placeholder  --- */
+.sticker {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+}
+.st-side-left {
+  top: 10%;
+  left: 2%; /* Près du bord gauche */
+  width: 130px;
+  height: auto;
+  transform: rotate(-15deg);
+  opacity: 0.8;
+}
+
+/* Sticker à droite du texte */
+.st-side-right {
+  top: 25%;
+  right: 2%; /* Près du bord droit */
+  width: 110px;
+  height: auto;
+  transform: rotate(12deg);
+  opacity: 0.8;
+}
+
+/* --- OPTIMISATION POUR MOBILE --- */
+@media (max-width: 1100px) {
+  /* Si l'écran rétrécit, on éloigne les stickers pour ne pas gêner la lecture */
+  .st-side-left, .st-side-right {
+    opacity: 0.4; /* On les rend plus discrets */
+    width: 80px;  /* On les réduit */
   }
 }

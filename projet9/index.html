@@ -153,47 +153,4 @@
   <footer>
     <p style="margin-top: 1rem;">© 2025 - Wissale Benaicha</p>
 </footer>
-
-<div id="lightbox" class="lightbox">
-  <span class="close-btn">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
-  <div id="caption"></div>
-</div>
-
-<script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const captionText = document.getElementById("caption");
-const closeBtn = document.getElementsByClassName("close-btn")[0];
-
-const photoCards = document.querySelectorAll('.photo-card');
-
-photoCards.forEach(card => {
-    card.addEventListener('click', function() {
-        
-        lightbox.style.display = "block";
-        
-        const imgElement = this.querySelector('img');
-        const pElement = this.querySelector('p'); 
-
-        lightboxImg.src = imgElement.src;
-        
-        if (pElement) {
-            captionText.innerHTML = pElement.innerHTML;
-        } else {
-            captionText.innerHTML = "";
-        }
-    });
-});
-
-closeBtn.onclick = function() {
-  lightbox.style.display = "none";
-}
-
-
-lightbox.addEventListener('click', function(e) {
-    if (e.target !== lightboxImg) { 
-        lightbox.style.display = "none";
-    }
-});
-</script> </body>
+ </body>
