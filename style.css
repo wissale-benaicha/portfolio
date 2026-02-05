@@ -500,28 +500,26 @@ background-color: rgba(0,0,0,0.2);
 }
 .st-side-left {
   top: 10%;
-  left: 2%; /* Près du bord gauche */
+  left: 2%;
   width: 130px;
   height: auto;
   transform: rotate(-15deg);
   opacity: 0.8;
 }
 
-/* Sticker à droite du texte */
+
 .st-side-right {
   top: 25%;
-  right: 2%; /* Près du bord droit */
+  right: 2%;
   width: 110px;
   height: auto;
   transform: rotate(12deg);
   opacity: 0.8;
 }
 
-/* --- OPTIMISATION POUR MOBILE --- */
 @media (max-width: 1100px) {
-  /* Si l'écran rétrécit, on éloigne les stickers pour ne pas gêner la lecture */
   .st-side-left, .st-side-right {
-    opacity: 0.4; /* On les rend plus discrets */
-    width: 80px;  /* On les réduit */
+    opacity: 0.4;
+    width: 80px;
   }
 }
